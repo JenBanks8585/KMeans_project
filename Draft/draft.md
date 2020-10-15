@@ -1,4 +1,7 @@
 
+#### Point distribution 
+![Scatter Plot](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_data.png)
+
 ## Steps
 ### 1. Initialized randomized centroids
 ####      The centroids represent the center-most locations among a group of points. It is also referred to as the center of gravity. The first step in this algorithm is to    initialize the centroids. This can be chosen randomly or at will. In this post we will randomly choose them. The number of centroids depend on the number of clusters, K. 
