@@ -84,4 +84,4 @@ KM_instance.create_clusters(X)
 clusters = [[14, 8, 11, 5, 0], [1, 7, 10], [2, 12, 4], [15, 9, 3, 13]]
 ```
 
- ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_initial_centroids2.png)
+ ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/centroid1.png)
