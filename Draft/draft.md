@@ -32,4 +32,4 @@ centroids = **array([[1, 2],
        [5, 2],
        [6, 4]])**
  
- ![with centroids](https://github.com/JenBanks8585/KMeans_project/blob/main/Pics/scatter_initial_centroids.png)
+ ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_initial_centroids2.png)
