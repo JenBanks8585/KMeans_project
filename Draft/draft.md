@@ -49,15 +49,29 @@ Below is one implementation of this:
  ```
  KM_instance.random_centroids(X)
  
- centroids = array([[1, 2], [9, 2], [5, 2], [6, 4]])
+ centroids = array([[1, 5], [2, 9], [5, 2], [6, 5]])
  
  ```
  
- ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_initial_centroids2.png)
+ ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/centroid0.png)
  
  
 ### 3. Cluster the data points based on closest centroid
 
-  The centroids represent the center-most locations among a group of points. It is also referred to as the center of gravity. The first step in this algorithm is to    initialize the centroids. This can be chosen randomly or at will. In this post we will randomly choose them. The number of centroids depend on the number of clusters, K. 
-Below is one implementation of this:
+  Once the centroids are initialized, The distance of each point in the dataset will be computed from each of the initialized centroids.  For the purposes of this post, I will use Euclidean distance.  Each point will be assigned a cluster group based on proximity. The `create_clusters` method takes in the dataset and list of centroids. It outputs the list of clusters where each cluster is also a list of indices of the points that belong to that group. 
+  
+  
+ ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_initial_centroids2.png)
+```
+   def create_clusters(self, data, centroids):
+    clusters = [[] for _ in range(self.K)]
+
+    for point_idx, point in enumerate(data):
+      closest_idx =np.argmin([np.linalg.norm(data-centroid) for centroid in self.random_centroids(data)])
+      clusters[closest_idx].append(point_idx)
+    
+    return clusters
+```
+d
+
 
