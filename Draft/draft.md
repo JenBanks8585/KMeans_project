@@ -15,3 +15,21 @@ def random_centroids(self, data):
   ```
   
  This method takes in data and returns the coordinates of the initial centroids. The first line solves for randomized index from within the number of observations. For instance the dataset has a shape of 20 x 4. Then this line basically randomly chooses between 0- 19, `data.shape[0]` and from those choices, take the first K values, representing the initial centroids of the chosen K clusters.  The second line uses these indices on the data to grab their corresponding points or observations. 
+ 
+ For instance, using clusters, K = 4, initial centroids using this method would be: 
+ 
+ ```
+ K = 4
+
+def random_centroids(data):
+  centroids = np.array(data[np.random.permutation(data.shape[0])[:K]])
+  return centroids
+
+random_centroids(X)
+```
+centroids = **array([[1, 2],
+       [9, 2],
+       [5, 2],
+       [6, 4]])**
+ 
+ ![with centroids](https://github.com/JenBanks8585/KMeans_project/blob/main/Pics/scatter_initial_centroids.png)
