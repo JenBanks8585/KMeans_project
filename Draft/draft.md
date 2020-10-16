@@ -58,12 +58,12 @@ Below is one implementation of this:
  
 ### 3. Cluster the data points based on closest centroid
 
-  Once the centroids are initialized, The distance of each point in the dataset will be computed from each of the initialized centroids.  For the purposes of this post, I will use Euclidean distance.  Each point will be assigned a cluster group based on proximity. The `create_clusters` method takes in the dataset and list of centroids. It outputs the list of clusters where each cluster is also a list of indices of the points that belong to that group. 
+  Once the centroids are initialized, The distance of each point in the dataset will be computed from each of the initialized centroids.  For the purposes of this post, I will use Euclidean distance.  Each point will be assigned a cluster group based on proximity. The `create_clusters` method takes in the dataset and outputs the list of clusters where each cluster is also a list of indices of the points that belong to that group. 
   
   
  ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_initial_centroids2.png)
 ```
-   def create_clusters(self, data, centroids):
+   def create_clusters(self, data):
     clusters = [[] for _ in range(self.K)]
 
     for point_idx, point in enumerate(data):
@@ -72,6 +72,9 @@ Below is one implementation of this:
     
     return clusters
 ```
-d
+In this example, when this method is called, the following indices are grouped into their corresponding clusters as also shown in the figure above.
 
-
+```
+KM_instance.create_clusters(X)
+clusters = [[14, 8, 11, 5, 0], [1, 7, 10], [2, 12, 4], [15, 9, 3, 13]]
+```
