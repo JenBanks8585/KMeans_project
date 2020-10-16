@@ -60,21 +60,28 @@ Below is one implementation of this:
 
   Once the centroids are initialized, The distance of each point in the dataset will be computed from each of the initialized centroids.  For the purposes of this post, I will use Euclidean distance.  Each point will be assigned a cluster group based on proximity. The `create_clusters` method takes in the dataset and outputs the list of clusters where each cluster is also a list of indices of the points that belong to that group. 
   
-  
- ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_initial_centroids2.png)
-```
+ ```
    def create_clusters(self, data):
-    clusters = [[] for _ in range(self.K)]
+ (a)   clusters = [[] for _ in range(self.K)]
 
-    for point_idx, point in enumerate(data):
-      closest_idx =np.argmin([np.linalg.norm(data-centroid) for centroid in self.random_centroids(data)])
-      clusters[closest_idx].append(point_idx)
+ (b)   for point_idx, point in enumerate(data):
+ (c)     closest_idx =np.argmin([np.linalg.norm(data-centroid) for centroid in self.random_centroids(data)])
+ (d)     clusters[closest_idx].append(point_idx)
     
-    return clusters
+ (e)   return clusters
 ```
+
+In line (a), a list of empty list is instantiated and assigned a variable name called `clusters`.
+In line (b), a `for loop` is created to iterate over indices of the dataset and their corresponding points. 
+In line (c), calling `linalg.norm()` computes the distance of two points, this is iterated across all points, againts all K number of centroids, in this case 4. The index of the smallest distance from each centroid is then saved to variable `closest_idx`.
+In line (d), each corresponding index of the datapoints is appended to the cluster where the centroid they are closest to is a part of.
+In line (e), the function returns a list of clusters.
+
 In this example, when this method is called, the following indices are grouped into their corresponding clusters as also shown in the figure above.
 
 ```
 KM_instance.create_clusters(X)
 clusters = [[14, 8, 11, 5, 0], [1, 7, 10], [2, 12, 4], [15, 9, 3, 13]]
 ```
+
+ ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_initial_centroids2.png)
