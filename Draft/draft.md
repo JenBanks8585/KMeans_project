@@ -1,5 +1,10 @@
 # K Means Clustering
 
+What is K Means Clustering? When I try to learn a new concept or field, it always helps me to understand where this particular concept is oriented in the bigger scheme of things. In this post, we will learn about K Means Clustering, a type of machine learning algorithm. So in the big field of machine learning, where does K Means clustering fall?
+
+As shown in the figure below, there are three types of machine learning techniques. In general, the difference between supervised and unsupervised is the lack of label on the latter one. Having said that, this post will cover one way to deal with unsupervised learning and that is by clustering. There are multiple ways to implement a clustering algorithm, we will mainly focus on K Means Clustering.
+
+
 #### Point distribution 
 ![Scatter Plot](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/scatter_data.png)
 
@@ -85,3 +90,5 @@ clusters = [[14, 8, 11, 5, 0], [1, 7, 10], [2, 12, 4], [15, 9, 3, 13]]
 ```
 
  ![initial centroids](https://raw.githubusercontent.com/JenBanks8585/KMeans_project/main/Pics/centroid1.png)
+
+
